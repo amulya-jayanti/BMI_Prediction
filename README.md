@@ -292,72 +292,11 @@ linear relationship between predicted and actual BMI values. Metrics were
 reported both overall and separately for male and female subsets to evaluate
 gender-specific performance
 
-### V . Results
-The results from the two models used in the reference paper are below. Our goal has been to
-beat the performance of these models.
-Model: VGG Face
-Metrics
-Overall Pearson (r) 0.65
-Male (r) 0.71
-Female (r) 0.57
-Model: VGG Net
-Metrics
-Overall Pearson (r) 0.47
-Male (r) 0.58
-Female (r) 0.36
-The results of the five fine tuned computer vision models are below. We were successful in
-beating the Pearson r statistic for the Overall and Female classes, but were only able to achieve
-a Pearson r statistic of 0.69 compared to the 0.71 target from the reference paper.
-Model MAE Pearson r (Overall) Pearson r (Male) Pearson r (Female)
-VGGFace 5.04 0.64 0.65 0.63
-VGGNet 4.99 0.65 0.7 0.58
-ResNet50 6.04 0.47 0.41 0.51
-FaceNet 5.52 0.58 0.62 0.53
-EfficientNet 4.72 0.67 0.69 0.65
-The table below provides detailed results of the five computer vision models, providing a
-breakdown of the Pearson r statistic and MAE for all the regression models. The Pearson r
-statistic is reported both for the overall dataset and by gender. The best results for each
-computer model have been highlighted. 
+### Conclusion:
+This project demonstrates the potential of deep learning models to accurately estimate Body Mass Index (BMI) using facial images. Building upon benchmark models from prior research, we implemented and fine-tuned five leading computer vision architectures—VGGFace, VGGNet, ResNet50, FaceNet, and EfficientNetB3—combined with multiple regression techniques. Our best-performing model, EfficientNetB3, achieved a Pearson correlation of 0.67 overall and 0.65 for females, successfully outperforming reference benchmarks across most metrics.
 
-The EfficientNetB3 model has the best performance by all metrics except the Male Pearson r statistic, where the VGG19 model performs best.
+While the VGGNet variant delivered the highest accuracy for males, the EfficientNetB3 model showed superior overall generalization with the lowest MAE of 4.72.
 
-Regressor Ridge
-Random Forest
-SVR
-KNN
-MLP
-XGB
-LightGBM
-CatBoost
+To push performance further, we explored ensemble strategies, feature concatenation with gender, and strategic layer unfreezing. Future directions include integrating more diverse datasets, leveraging attention-based architectures (e.g., Vision Transformers), and embedding fairness-aware evaluation practices to ensure ethical deployment.
 
-
-### VI. Enhancements & Future Work
-There are several enhancements that can be made to improve the above outcomes and
-results, particularly in terms of the data, modeling, and ethics.
-Strengthen the dataset
-●Broaden demographic coverage by adding more subjects across ages,
-ethnicities, and gender.
-●Capture a wider range of facial expressions and real-world conditions (e.g.
-varied lighting, masks, glasses).
-●Merge in complementary public and private datasets to boost sample diversity
-and model robustness.Refine Modeling Strategies
-●Fine-tune ensemble methods—experiment with stacking or weighted averaging
-to push Pearson r higher and MAE lower.
-●Conduct systematic hyperparameter adjustments (learning rates, epoch counts,
-layers to unfreeze) to identify optimal configurations.
-●Investigate attention-based backbones (such as Vision Transformers or hybrid
-CNN-Transformer models) to let the network learn which facial regions matter
-most.
-Embed Fairness & Transparency
-●Evaluate performance across subgroups—gender, age brackets and skin
-tones—to uncover and correct any biases.
-●Integrate interpretability tools (such as SHAP) so you can see exactly which
-facial features drive each BMI estimate.
-●Regularly audit outlier predictions to guard against unintended errors in
-deployment environments.
-By integrating these enhancements, we anticipate surpassing our current best model’s
-performance. Our systematic exploration of architectures, ensemble methods, and
-hyperparameter tuning has demonstrated that facial imagery can reliably estimate BMI.
-With these refinements, facial-based BMI estimation can serve as a seamless,
-noninvasive screening tool that complements traditional health assessments and acts as
-an early indicator ahead of clinical consultations
+This work highlights how non-invasive, image-based approaches can assist in early health screening and decision support—potentially bridging gaps in clinical accessibility, especially in underserved populations.
