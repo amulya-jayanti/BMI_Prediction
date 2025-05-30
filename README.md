@@ -317,8 +317,9 @@ EfficientNet 4.72 0.67 0.69 0.65
 The table below provides detailed results of the five computer vision models, providing a
 breakdown of the Pearson r statistic and MAE for all the regression models. The Pearson r
 statistic is reported both for the overall dataset and by gender. The best results for each
-computer model have been highlighted. The EfficientNetB3 model has the best performance by
-all metrics except the Male Pearson r statistic, where the VGG19 model performs best.
+computer model have been highlighted. 
+
+The EfficientNetB3 model has the best performance by all metrics except the Male Pearson r statistic, where the VGG19 model performs best.
 
 Regressor Ridge
 Random Forest
@@ -329,84 +330,30 @@ XGB
 LightGBM
 CatBoost
 
-Metrics
-MAE Overall (r) Male (r) Female (r) MAE Overall (r) Male (r) Female (r) MAE Overall (r) Male (r) Female (r) MAE Overall (r) Male (r) Female (r) MAE Overall (r) Male (r) Female (r) MAE Overall (r) Male (r) Female (r) MAE Overall (r) Male (r) Female (r) MAE Overall (r) Male (r) ResNet50 6.122 0.35 0.38 0.48 6.08 0.45 0.39 0.5 6.08 0.45 0.4 0.5 6.49 0.39 0.32 0.45 6.27 0.46 0.41 0.5 6.06 0.44 0.38 0.49 6.11 0.45 0.4 0.5 6.07 0.46 0.4 Machine Learning II
-Feature Extractor
-VGGFace VGG19 EfficientNet FaceNet
-5.54 5.15 4.78 5.52
-0.59 0.63 0.66 0.57
-- 0.68 0.68 0.61
-- 0.58 0.65 0.53
-5.59 4.99 4.72 5.7
-0.56 0.65 0.67 0.55
-- 0.7 0.69 0.6
-- 0.58 0.65 0.49
-5.5 5 4.88 5.52
-0.61 0.65 0.66 0.58
-- 0.7 0.67 0.62
-- 0.58 0.64 0.53
-6.17 5.2 4.89 6.4
-0.42 0.63 0.65 0.4
-- 0.67 0.67 0.32
-- 0.57 0.63 0.45
-- 4.98 4.89 5.6
-- 0.65 0.65 0.54
-- 0.7 0.68 0.57
-- 0.59 0.64 0.52
-5.51 5.08 4.82 -
-0.56 0.64 0.66 -
-- 0.68 0.68 -
-- 0.58 0.63 -
-5.14 5.15 4.78 5.6
-0.61 0.62 0.66 0.55
-- 0.68 0.68 0.57
-- 0.55 0.64 0.52
-5.12 5.05 4.76 5.9
-0.63 0.65 0.66 0.48
-- 0.7 0.68 0.53
-14
-Machine Learning II
-Female (r) 0.51 - 0.58 0.64 0.46
-MAE 6.04 5.04 4.99 4.73 5.52
-Ensembling
-optional)
-Overall (r) 0.47 0.64 0.65 0.67 0.58
-Male (r) 0.41 0.65 0.7 - 0.62
-Female (r) 0.51 0.63 0.58 - 0.53
 
 ### VI. Enhancements & Future Work
 There are several enhancements that can be made to improve the above outcomes and
 results, particularly in terms of the data, modeling, and ethics.
 Strengthen the dataset
-●
-Broaden demographic coverage by adding more subjects across ages,
+●Broaden demographic coverage by adding more subjects across ages,
 ethnicities, and gender.
-●
-Capture a wider range of facial expressions and real-world conditions (e.g.
+●Capture a wider range of facial expressions and real-world conditions (e.g.
 varied lighting, masks, glasses).
-●
-Merge in complementary public and private datasets to boost sample diversity
-and model robustness.
-Refine Modeling Strategies
-●
-Fine-tune ensemble methods—experiment with stacking or weighted averaging
+●Merge in complementary public and private datasets to boost sample diversity
+and model robustness.Refine Modeling Strategies
+●Fine-tune ensemble methods—experiment with stacking or weighted averaging
 to push Pearson r higher and MAE lower.
-●
-Conduct systematic hyperparameter adjustments (learning rates, epoch counts,
+●Conduct systematic hyperparameter adjustments (learning rates, epoch counts,
 layers to unfreeze) to identify optimal configurations.
-●
-Investigate attention-based backbones (such as Vision Transformers or hybrid
+●Investigate attention-based backbones (such as Vision Transformers or hybrid
 CNN-Transformer models) to let the network learn which facial regions matter
 most.
 Embed Fairness & Transparency
-●
-Evaluate performance across subgroups—gender, age brackets and skin
+●Evaluate performance across subgroups—gender, age brackets and skin
 tones—to uncover and correct any biases.
-●
-Integrate interpretability tools (such as SHAP) so you can see exactly which
+●Integrate interpretability tools (such as SHAP) so you can see exactly which
 facial features drive each BMI estimate.
-●
-Regularly audit outlier predictions to guard against unintended errors in
+●Regularly audit outlier predictions to guard against unintended errors in
 deployment environments.
 By integrating these enhancements, we anticipate surpassing our current best model’s
 performance. Our systematic exploration of architectures, ensemble methods, and
